@@ -20,6 +20,6 @@ Technical test for Maison du Monde
 Currently there's no swagger implemented
 
 To interact with the application :
-    - Connect to http://localhost:8000/
-    - Pass the argument queries to the url
-    - example http://localhost:8000/?queries=abc,ab,ac
+- Connect to http://localhost:8000/
+- Pass the argument queries to the url
+- example http://localhost:8000/?queries=abc,ab,ac
