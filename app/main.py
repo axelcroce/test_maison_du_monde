@@ -1,12 +1,21 @@
 import sys
 import os
-from SparseArray import *
+from SparseArray import SparseArray
+from flask import Flask, render_template, request
+app = Flask(__name__)
 
-if __name__ == '__main__':    
-    # Reading the queries passed in argument and make a list out of the string
-    queries = sys.argv[1]
-    queries = queries.split(',')
 
+@app.route('/')
+def index():
+
+
+    queries = request.args.get('queries')
+    
+    try:
+      queries = queries.split(',')
+    except AttributeError:
+      return("You did not pass the correct arguments")
+    
     # Reading the strings from the environment variable
     strings = os.environ.get('STRINGS')
     strings = strings.split(',')
@@ -17,4 +26,8 @@ if __name__ == '__main__':
 
     # Display the answer as a dict
     answer = dict(zip(queries, results))
-    print(answer)
+    return(answer)
+
+if __name__ == '__main__':
+  app.run(host='0.0.0.0', port=8000, debug=True)
+ 
