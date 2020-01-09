@@ -10,4 +10,4 @@ COPY app .
 
 ENV STRINGS="ab,ab,abc"
 
-CMD [ "python","main.py" ]
+ENTRYPOINT [ "python","main.py" ]
