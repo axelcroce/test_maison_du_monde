@@ -7,8 +7,6 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-
-
     queries = request.args.get('queries')
     
     try:

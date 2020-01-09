@@ -2,6 +2,7 @@ version: '3'
 services:
   web:
     build: .
+    image: test_mdm:1.0
     ports:
     - "8000:8000"
     volumes:
