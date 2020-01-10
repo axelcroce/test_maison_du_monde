@@ -1,25 +1,45 @@
-# test_mdm
-Technical test for Maison du Monde
+# test_maison_du_monde
+Technical test for Maison du Monde.
+This is a simple Python/Flask app to check how many times some query strings occur in a list of strings. For the sake of the test, the list of strings is an environment variable set by the Dockerfile and the query strings is passed as an argument in the URL.
 
-## Docker commands
+## How to use the App
 
-- Build the image : 
-    - docker build -t test_mdm:1.0 .
+### Installation
+- Clone the repository
+    - git clone git@github.com:axelcroce/test_maison_du_monde.git
+- Move to the directory
+    - cd test_maison_du_monde
 
-- Run docker image :
-    - docker run -d -p 8000:8000 test_mdm:1.0
+### Docker commands
 
-- Using docker-compose to debug:
-    - docker-compose up
+1. Build the image : 
+    - sudo docker build -t test_maison_du_monde:1.0 .
 
-- Delete docker-compose:
-    - docker-compose down
+2. Run docker image :
+    - sudo docker run -d -p 8000:8000 test_maison_du_monde:1.0
 
-## Flask app
+3. Stop and remove docker container :
+    1. Get the id of the container :
+    - sudo docker ps
+    2. Stop and remove it :
+    - sudo docker stop <id> && sudo docker rm <id>
 
-Currently there's no swagger implemented
+OR
 
+2. Running docker image using docker-compose to debug:
+    - sudo docker-compose up
+
+3. Delete stop and remove docker container using docker-compose:
+    - sudo docker-compose down
+
+### Using the Flask app
+
+Currently there's no swagger implemented.
+Once you run the Docker image, you can interact with the application.
 To interact with the application :
 - Connect to http://localhost:8000/
 - Pass the argument queries to the url
-- example http://localhost:8000/?queries=abc,ab,ac
+- examples :
+    - for the queries abc,ab,ac : http://localhost:8000/?queries=abc,ab,ac
+    - for the queries fesrl,erb,abc : http://localhost:8000/?queries=fesrl,erl,abc
+
