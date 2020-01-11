@@ -1,6 +1,21 @@
 # test_maison_du_monde
 Technical test for Maison du Monde.
 This is a simple Python/Flask app to check how many times some query strings occur in a list of strings. For the sake of the test, the list of strings is an environment variable set by the Dockerfile and the query strings is passed as an argument in the URL.
+It returns a dictionary with the query strings as keys and the number of time it occurs in the list of strings as value.
+
+Examples :
+- input :    
+    - strings = "ab,ab,abc"
+    - queries = "ab,abc,bc"
+- output :
+{
+  "ab": 2, 
+  "abc": 1, 
+  "bc": 0
+}
+
+
+
 
 ## How to use the App
 
