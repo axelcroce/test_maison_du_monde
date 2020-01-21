@@ -7,12 +7,12 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
+    # Get and parse the queries passed in argument
     queries = request.args.get('queries')
-    
     try:
       queries = queries.split(',')
     except AttributeError:
-      return("You did not pass the correct arguments")
+      return("You did not pass the correct query format in the url")
     
     # Reading the strings from the environment variable
     strings = os.environ.get('STRINGS')
